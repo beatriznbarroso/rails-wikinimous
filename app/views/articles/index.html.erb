@@ -1,0 +1,13 @@
+<h1 style="margin: 20px 600px;">Articles</h1>
+
+<% @articles.each do |article| %>
+<ul style="text-decoration: none; margin: 20px 570px; ">
+  <li class="list-inline"><%= link_to article.title, article_path(article)%> <%= link_to article_path(article), method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %></li>
+  <li class="list-inline"><%= article.content %></li>
+</ul>
+<%end%>
+
+<%=link_to 'New Article', new_article_path %>
